@@ -1,0 +1,8 @@
+{
+  "merged_data": { "rows": 1754155, "columns": 23, "file_size": 84840756 },
+  "processed_data": { "rows": 1754155, "columns": 17, "file_size": 51916159 },
+  "train_data": { "rows": 547185, "columns": 15, "file_size": 18393368 },
+  "test_data": { "rows": 1206970, "columns": 15, "file_size": 42293093 },
+  "test_labels": { "rows": 1206970, "columns": 1, "file_size": 5417374 },
+  "predictions": { "rows": 1206970, "columns": 17, "file_size": 52557901 }
+}

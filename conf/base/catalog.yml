@@ -1,0 +1,37 @@
+raw_daily_data:
+  type: partitions.PartitionedDataset
+  path: data/01_raw/raw_daily_data # path to the location of partitions
+  dataset: anomaly_detection_pipeline_kedro.datasets.pandas_pickle_dataset.PandasPickleDataset
+
+merged_data:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/merged_data.parquet
+
+processed_data:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/processed_data.parquet
+
+train_data:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/train.parquet
+
+test_data:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/test.parquet
+
+test_labels:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/test_labels.parquet
+
+ml_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/ml_model.pkl
+  backend: pickle
+
+predictions:
+  type: pandas.ParquetDataset
+  filepath: data/07_model_output/predictions.parquet
+
+evaluation_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/auc_plots.png
